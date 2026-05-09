@@ -1,0 +1,16 @@
+{
+  "plugins": ["typescript", "unicorn"],
+  "rules": {
+    "no-unused-vars": "error",
+    "no-undef": "error",
+    "eqeqeq": "error",
+    "no-console": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "unicorn/prefer-query-selector": "error"
+  },
+  "ignorePatterns": [
+    ".nuxt/",
+    ".output/",
+    "node_modules/"
+  ]
+}
