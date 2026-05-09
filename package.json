@@ -14,10 +14,18 @@
     "test:e2e:ui": "playwright test --ui",
     "test": "pnpm run test:unit && pnpm run test:e2e",
     "lint": "oxlint --deny-warnings .",
-    "lint:fix": "oxlint --fix ."
+    "lint:fix": "oxlint --fix .",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,vue}": ["oxlint --deny-warnings", "vue-tsc --noEmit"]
   },
   "dependencies": {
     "@pinia/nuxt": "0.11.3",
+    "@vueuse/core": "^14.3.0",
     "nuxt": "^4.4.4",
     "pinia": "^3.0.4",
     "vue": "^3.5.33",
@@ -25,17 +33,26 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",
+    "@nuxt/eslint": "^1.15.2",
     "@nuxt/test-utils": "^4.0.3",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@playwright/test": "^1.59.1",
     "@vue/test-utils": "^2.4.10",
     "axe-core": "^4.11.4",
     "happy-dom": "^20.9.0",
+    "lint-staged": "^17.0.3",
     "oxlint": "^1.63.0",
+    "simple-git-hooks": "^2.13.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5",
     "vitest-axe": "^0.1.0",
     "vue-tsc": "^3.2.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "simple-git-hooks",
+      "unrs-resolver"
+    ]
   },
   "packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38"
 }
