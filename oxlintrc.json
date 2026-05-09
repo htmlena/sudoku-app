@@ -1,16 +1,35 @@
 {
-  "plugins": ["typescript", "unicorn"],
-  "rules": {
-    "no-unused-vars": "error",
-    "no-undef": "error",
-    "eqeqeq": "error",
-    "no-console": "warn",
-    "@typescript-eslint/no-explicit-any": "warn",
-    "unicorn/prefer-query-selector": "error"
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "unicorn", "jsx-a11y", "import", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
   },
-  "ignorePatterns": [
-    ".nuxt/",
-    ".output/",
-    "node_modules/"
-  ]
+  "rules": {
+    "no-console": "warn",
+    "eqeqeq": "error",
+
+    "typescript/no-explicit-any": "warn",
+    "typescript/no-floating-promises": "error",
+    "typescript/consistent-type-imports": "error",
+
+    "unicorn/prefer-query-selector": "error",
+    "unicorn/no-array-for-each": "error",
+    "unicorn/prefer-dom-node-dataset": "error",
+    "unicorn/no-negated-condition": "warn",
+
+    "jsx-a11y/alt-text": "error",
+    "jsx-a11y/aria-role": "error",
+    "jsx-a11y/no-noninteractive-element-interactions": "error",
+    "jsx-a11y/interactive-supports-focus": "error",
+    "jsx-a11y/click-events-have-key-events": "error",
+
+    "import/no-cycle": "error",
+    "import/no-duplicates": "error",
+
+    "vitest/no-disabled-tests": "warn",
+    "vitest/no-focused-tests": "error",
+    "vitest/expect-expect": "error"
+  },
+  "ignorePatterns": [".nuxt/", ".output/", "node_modules/"]
 }
