@@ -7,7 +7,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test:unit":   "vitest run",
+    "test:unit:watch": "vitest",
+    "test:e2e":    "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test":        "pnpm run test:unit && pnpm run test:e2e"
   },
   "dependencies": {
     "@pinia/nuxt": "0.11.3",
@@ -17,8 +22,16 @@
     "vue-router": "^5.0.6"
   },
   "devDependencies": {
+    "@nuxt/test-utils": "^4.0.3",
     "@nuxtjs/tailwindcss": "^6.14.0",
+    "@playwright/test": "^1.59.1",
+    "@vue/test-utils": "^2.4.10",
+    "axe-core": "^4.11.4",
+    "happy-dom": "^20.9.0",
     "typescript": "^6.0.3",
+    "vitest": "^4.1.5",
+    "vitest-axe": "^0.1.0",
     "vue-tsc": "^3.2.8"
-  }
+  },
+  "packageManager": "pnpm@11.0.9+sha512.34ce82e6780233cf9cad8685029a8f81d2e06196c5a9bad98879f7424940c6817c4e4524fb7d38b8553ceed48b9758b8ebaf1abd3600c232c4c8cf7366086f38"
 }
