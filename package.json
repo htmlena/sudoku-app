@@ -21,7 +21,8 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{ts,vue}": ["oxlint --deny-warnings", "vue-tsc --noEmit"]
+    "*.{ts,vue}": "oxlint --deny-warnings",
+    "*.{ts,vue,json}": "bash -c 'vue-tsc --noEmit'"
   },
   "dependencies": {
     "@pinia/nuxt": "0.11.3",
