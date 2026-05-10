@@ -1,0 +1,7 @@
+.board-row {
+    @apply flex;
+}
+
+.cell {
+  @apply w-10 h-10 border flex items-center justify-center;
+}
